@@ -1,0 +1,109 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    user-select: none;
+    background-color: #2a2c35;
+    margin: 0;
+    box-sizing: border-box
+}
+
+header {
+    position: relative;
+    top: 0;
+    width: 100vw;
+    height: 10vh;
+    background-color: #383a47;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1.title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 6vw;
+    font-weight: 300;
+    color: #ffffff;
+}
+
+header button {
+    height: 7vh;
+    width: 7vh;
+    border: none;
+    margin: 2.5vh;
+    background-color: inherit;
+}
+
+button:focus {
+    outline: 0;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header a i.material-icons.exit {
+    font-size: 7vh;
+    margin: 2.5vh;
+    color: #41bfaa;
+}
+
+header button.placeholder {
+    background-size: 5vh;
+}
+
+/* ----------------------------------------------------------- */
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 90vh;
+}
+
+section.profile form.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 75vw;
+    margin: 0;
+}
+
+section.profile form.info input {
+    display: flex;
+	height: 6vh;
+	color: #ffffff;
+	background-color: transparent;
+    box-sizing: border-box;
+    justify-content: center;
+	border: none;
+	font-size: 2.5vh;
+    border-bottom: .3vh solid #d3d3d3;
+}
+
+section.profile form.info input:focus {
+    outline: none;
+    border-color: #41bfaa;
+}
+
+section.profile form.info input:required {
+	outline: none;
+	border: none;
+	box-shadow: none;
+}
+
+::placeholder {
+    font-size: 2.5vh;
+    color: #d3d3d3;
+}
+
+section.profile button.save {
+	border: 0;
+    height: 7vh;
+    width: 75vw;
+	color: #ffffff;
+	background-color: #41bfaa;
+	border-radius: .3vh;
+	border-style: solid;
+    font-size: 6vw;
+}

@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
+*:not(input) {
+    user-select: none;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	display: block;
+	margin: 0;
+	background: radial-gradient(#383a47, #2a2c35);
+}
+
+form.login {
+	display: flex;
+	flex-flow: column;
+	font-family: 'Roboto', sans-serif;
+	width: 80vw;
+	font-size: 3rem;
+	padding: 5vmin;
+}
+
+form.login input {
+    display: flex;
+	height: 6vh;
+	margin: 1vh;
+	color: #ffffff;
+	background-color: transparent;
+    box-sizing: border-box;
+    justify-content: center;
+	border: none;
+	font-size: 2.5vh;
+    border-bottom: .3vh solid white;
+}
+
+form.login input:focus {
+	outline: none;
+}
+
+input:required {
+	outline: none;
+	border: none;
+	box-shadow: none
+}
+
+::placeholder {
+	font-size: 2.5vh;
+    color: #ffffff;
+}
+
+form.login button {
+	margin: 1vh;
+	border: 0;
+	height: 7vh;
+	color: #ffffff;
+	background-color: #41bfaa;
+	border-radius: .3vh;
+	border-style: solid;
+	font-size: 6vw;
+}
+
+form.login a {
+	display: flex;
+	align-self: center;
+	color: #ffffff;
+	font-size: 4vw;
+	text-decoration: none;
+	margin-top: 1vh;
+	opacity: .8;
+}
+
+div.container {
+	display: flex;
+	justify-content: center;
+	width: 100vw;
+	flex-direction: column;
+	align-items: center;
+}
+
+div.container img {
+	display: flex;
+	max-width: 60vw;
+	max-height: 50vh;	
+	width: auto;
+	height: auto;
+	margin-top: 10vh;
+	margin-bottom: 10vh;
+}
+
+/* Test: */
+
+/* 
+.material-icons.login {
+	color: #41bfaa;
+} 
+*/

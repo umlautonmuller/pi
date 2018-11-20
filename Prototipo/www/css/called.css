@@ -1,0 +1,91 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    user-select: none;
+    background-color: #2a2c35;
+    margin: 0;
+    box-sizing: border-box
+}
+
+header {
+    position: relative;
+    top: 0;
+    width: 100vw;
+    height: 10vh;
+    background-color: #383a47;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1.title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 6vw;
+    font-weight: 300;
+    color: #ffffff;
+}
+
+header button {
+    height: 7vh;
+    width: 7vh;
+    border: none;
+    margin: 2.5vh;
+    background-color: inherit;
+}
+
+button:focus {
+    outline: 0;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header a i.material-icons.exit {
+    font-size: 7vh;
+    margin: 2.5vh;
+    color: #41bfaa;
+}
+
+header button.placeholder {
+    background-size: 5vh;
+}
+
+/* ------------------------------------------------------------------------------- */
+
+.call-instances {
+    color: #ffffff;
+    cursor: pointer;
+    padding: 4vh 3vw;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 5vw;
+}
+
+.info {
+    display: inline-block;
+    max-height: 0vh;
+    background-color: #2a2c35;
+    overflow: hidden;
+    transition: .5s;
+    color: #ffffff;
+}
+
+.info p {
+    margin: 0 5vw 5vh 5vw
+}
+
+.info.open {
+    max-height: 30vh
+}
+
+.call-container:nth-child(odd) .call-instances, .call-container:nth-child(odd) .info {
+    background-color: #2a2c35;
+}
+
+.call-container:nth-child(even) .call-instances, .call-container:nth-child(even) .info {
+    background-color: #383a47;
+}
+
+/* 2a2c35 */

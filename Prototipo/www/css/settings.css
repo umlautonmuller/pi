@@ -1,0 +1,143 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    user-select: none;
+    background-color: #2a2c35;
+    margin: 0;
+    box-sizing: border-box
+}
+
+header {
+    position: relative;
+    top: 0;
+    width: 100vw;
+    height: 10vh;
+    background-color: #383a47;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1.title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 6vw;
+    font-weight: 300;
+    color: #ffffff;
+}
+
+header button {
+    height: 7vh;
+    width: 7vh;
+    border: none;
+    margin: 2.5vh;
+    background-color: inherit;
+}
+
+button:focus {
+    outline: 0;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header a i.material-icons.exit {
+    font-size: 7vh;
+    margin: 2.5vh;
+    color: #41bfaa;
+}
+
+header button.placeholder {
+    background-size: 5vh;
+}
+
+/*-------------------------------------------------------------------------------------*/
+
+.menu ul div.subtitle {
+    margin: 3vh 0 4vh 2vh;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    color: #ffffff;
+}
+
+ul li {
+    margin: 4vh 0 4vh 2vh;
+}
+
+ul div.subtitle:not(:first-child) {
+    margin-top: 3vh;
+}
+
+hr {
+    border-color: #383a47;
+    margin: 0;
+    padding: 0
+}
+
+
+.container {
+    margin: 0 4vh 0 0;
+    height: 4vh;
+    width: 4vh;
+}
+
+.container input {
+    position: absolute;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.container input:checked ~ .checkmark {
+    background-color: #41bfaa;
+}
+
+.checkmark {
+    position: absolute;
+    background-color: #eee;
+    height: 4vh;
+    width: 4vh;
+    border-radius: 50%;
+}
+
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.container .checkmark:after {
+    left: 1.2vh;
+    top: .5vh;
+    width: 1vh;
+    height: 2vh;
+    border: solid white;
+    border-width: 0 1vmin 1vmin 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/* li:nth-child(4), */
+li:nth-child(6),
+li:nth-child(7) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/*
+#41bfaa
+#383a47
+*/

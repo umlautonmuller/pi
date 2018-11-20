@@ -1,0 +1,63 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/signup.css">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <header>
+        <a href="index.html">
+            <i class="material-icons exit">arrow_back</i>
+        </a>
+        <h1 class="title">Cadastro</h1>
+        <button class="placeholder"></button>
+    </header>
+
+    <section class="profile">
+        <form class="info">
+            <input type="text" placeholder="Nome" name="Nome">
+            <input type="text" placeholder="Email" name="Email">
+            <input type="password" placeholder="Senha" name="Senha">
+            <button class="ok">Ok!</button>
+        </form>
+    </section>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" async></script>
+    <script>
+        const dom = {}
+        dom.info = document.body.querySelector('form.info')
+        dom.info.inputs = dom.info.querySelectorAll('input')
+
+        dom.info.querySelector('form button').addEventListener('click', ev => {
+            cadastrar()
+            ev.preventDefault()
+        })
+        async function cadastrar() {
+            let emptyInputs = ""
+            for (const input of dom.info.inputs) {
+                if (input.value.trim() == "") {
+                    emptyInputs += input.name + ', '
+                }
+            }
+            if (emptyInputs.length > 0) {
+                swal('Erro!', `Os campos ${emptyInputs.substring(0, emptyInputs.length - 2)} estão vazios`, 'error')
+                return
+            }
+            let request = await fetch('http://200.135.34.110/joaorodrigues/fernando/PHP/cadastro.php', {
+                method: 'POST',
+                body: await JSON.stringify({ nome: dom.info.inputs[0].value.trim(), email: dom.info.inputs[1].value.trim(), senha: dom.info.inputs[2].value.trim() })
+            })
+            let response = await request.json()
+            if (response.result)
+                window.location.href = "index.html"
+            else {
+                swal('Erro!', response.body, 'error')
+                dom.info.inputs[1].value = dom.info.inputs[2].value = ""
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, user-scalable=0, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta charset="utf-8">
+</head>
+<body>
+    <div class="mapcontainer">
+        <div id="map"></div>
+    </div>
+
+    <main>
+        <header>
+            <i class="material-icons menu">menu</i>
+            <h1 class="title">TrackP</h1>
+            <button class="placeholder"></button>
+        </header>
+
+
+        <footer>
+             <!-- add_location -->
+            <i class="material-icons pin" id="call">place</i> 
+        </footer>
+
+        <div id="sidemenu">
+            <div class="container">
+                <div>
+                    <!-- User icon & username -->
+                    <div id="user">
+                        <i class="material-icons user">place</i>
+                        <div>Username</div>
+                    </div>
+                
+                    <div>Chamados<i class="material-icons list">keyboard_arrow_down</i></div> 
+                    <a href="called.html"><div><i class="material-icons list">call_made</i>Abertos</div></a>
+                    <a href="closed.html"><div><i class="material-icons list">done</i>Concluidos</div></a>
+                </div>
+
+                <div> 
+                    <a href="profile.html"><div><i class="material-icons list">settings</i>Editar Perfil</div></a>
+                    <a href="index.html"><div><i class="material-icons list">exit_to_app</i>Sair</div></a>
+                </div>
+            </div>
+        </div>
+        <div class="click"></div>
+
+        <div class="popup">
+            <div class="box">
+                <h1>Novo chamado</h1>
+                <form>
+                    <input type="text" name="nome" placeholder="Nome" id="nome" required>
+                    <textarea name="descricao" placeholder="Descrição" id="descricao" required></textarea>
+                    <input type="submit" name="send" id="send">
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="js/main.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvUPQg7SLkhnJ_LHWkXDvRnGe0ZwGvJig&callback=initMap" async defer></script>
+</body>
+</html>
