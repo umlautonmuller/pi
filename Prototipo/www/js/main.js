@@ -1,7 +1,6 @@
 if(!window.sessionStorage.id_usuario) {
     location.href = 'index.html'
 }
-var marker
 const menu = document.querySelector('div#sidemenu')
 const closeMenu = document.querySelector('div.click')
 const open = document.querySelector('i.material-icons.menu')
@@ -26,14 +25,15 @@ call.addEventListener('click', () => {
 
 var map, infoWindow, pos
 
+
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
-        center: { lat: -34.397, lng: 150.644 },
-        zoom: 8
+        center: { lat: -27.0175969, lng: -48.6632205 },
+        zoom: 14
     })
     infoWindow = new google.maps.InfoWindow
 
-    if (navigator.geolocation) {
+    document.addEventListener("deviceready", () => {
         navigator.geolocation.getCurrentPosition(function(position) {
         pos = {
             lat: position.coords.latitude,
@@ -44,32 +44,25 @@ function initMap() {
         
         createMarkers();
 
-    }, function() {
-        handleLocationError(true, infowindow, map.getCenter());
-    });
-    } else {
-        // Browser doesn't support Geolocation
-        handleLocationError(false, infowindow, map.getCenter());
-    }
-}
-
-var contentString 
+        }, () => {
+            handleLocationError(true, infowindow, map.getCenter());
+        })
+    }, false) 
+} 
 
 async function createMarkers() {
-    var request = await fetch('http://200.135.34.110/joaorodrigues/fernando/PHP/chamado/buscar.php')
+    var request = await fetch('http://200.135.34.110/joaorodrigues/fernando/PHP/chamado/buscar.php?estado=1')
 
-    var positions = await request.json()
+    var calls = await request.json()
 
-    if(positions.result) {
-        positions.body.forEach(element => {
-            console.log(element)
-            console.log(element.latitude)
-            marker = new google.maps.Marker({
+    if(calls.result) {
+        calls.body.forEach(element => {
+            let marker = new google.maps.Marker({
                 position: { lat: parseFloat(element.latitude), lng: parseFloat(element.longitude) },
                 map: map
             })
 
-            contentString = '<div id="content">' +
+            let contentString = '<div id="content">' +
                 '<div id="siteNotice">' +
                 '</div>' +
                 '<h1 id="firstHeading" class="firstHeading">' + element.nome + '</h1>' +
@@ -77,13 +70,13 @@ async function createMarkers() {
                 '<p>' + element.descricao + '</p>' +
                 '</div>' +
                 '</div>';
+
             google.maps.event.addListener(marker, 'click', () => {
-                var callInfo = new google.maps.InfoWindow({
+                let callInfo = new google.maps.InfoWindow({
                     content: contentString
                 })
                 callInfo.open(map, marker)
             })
-            console.log(marker)
         });
     }
 
@@ -104,7 +97,6 @@ call.addEventListener('click', () => {
             lat: position.coords.latitude,
             lng: position.coords.longitude
         };
-        console.log(pos)
     }, function() {
         handleLocationError(true, map.getCenter());
     })
@@ -124,3 +116,4 @@ document.querySelector('input#send').addEventListener('click', async ev => {
         })
     })
 })
+

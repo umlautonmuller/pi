@@ -66,6 +66,7 @@ header button.placeholder {
 .info {
     display: inline-block;
     max-height: 0vh;
+    width: 100%;
     background-color: #2a2c35;
     overflow: hidden;
     transition: .5s;

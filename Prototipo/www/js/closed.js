@@ -5,24 +5,24 @@ async function createDropdows() {
     let items = document.querySelectorAll("button.call-instances")
     for (var i = 0; i < items.length; i++) {
         items[i].addEventListener("click", ev => {
-            if (ev.target.nextElementSibling.classList == "info open"){
+            if (ev.target.nextElementSibling.classList == "info open") {
                 ev.target.nextElementSibling.classList.remove("open")
-            }else{
+            } else {
                 for (let j = 0; j < items.length; j++) {
-                    if (items[j].nextElementSibling.classList=="info open"){
+                    if (items[j].nextElementSibling.classList == "info open") {
                         items[j].nextElementSibling.classList.remove("open")
                         j = items.length
                     }
                 }
                 var info = ev.target.nextElementSibling
                 info.classList.add("open")
-                }
+            }
         })
     }
 }
 
 async function loadCalls() {
-    var request = await fetch('http://200.135.34.110/joaorodrigues/fernando/PHP/chamado/buscar.php?estado=1')
+    var request = await fetch('http://200.135.34.110/joaorodrigues/fernando/PHP/chamado/buscar.php?estado=0')
 
     var calls = await request.json()
 
@@ -44,10 +44,6 @@ async function loadCalls() {
 
             text.innerText = element.descricao
             button.innerText = element.nome
-
-            // button.addEventListener('click',()=>{
-            //     await fetch('url?idchamado='+element.id_chamado)
-            // })
         })
         createDropdows()
     }
