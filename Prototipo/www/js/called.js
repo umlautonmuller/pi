@@ -32,25 +32,52 @@ async function loadCalls() {
             let button = document.createElement('button')
             let content = document.createElement('div')
             let text = document.createElement('p')
+            let close = document.createElement('button')
 
             container.appendChild(button)
             container.appendChild(content)
             content.appendChild(text)
+            content.appendChild(close)
             main.appendChild(container)
 
             container.classList = 'call-container'
             button.classList = 'call-instances'
             content.classList = 'info'
+            close.classList = 'close'
 
             text.innerText = element.descricao
             button.innerText = element.nome
+            close.innerText = 'Concluído'
 
-            // button.addEventListener('click',()=>{
-            //     await fetch('url?idchamado='+element.id_chamado)
-            // })
+            close.addEventListener('click', ()=> {
+                swal({
+                    title: "Tem certeza?",
+                    text: "Chamados concluídos não aparecem no mapa!",
+                    icon: "warning",
+                    dangerMode: true,
+                    buttons: {
+                        cancel: "Cancelar",
+                        move: "Certeza, meu chefe",
+                    },
+                })
+                    .then((value) => {
+                        switch (value) {
+                            case "move":
+                                swal({
+                                    title: "Feito!",
+                                    text: "Chamado movido com sucesso",
+                                    icon: "success"
+                                });
+                                fetch('http://200.135.34.110/joaorodrigues/fernando/PHP/chamado/update.php?id_chamado='+element.id_chamado+'&estado='+element.estado)
+                                break;
+
+                            default: break;
+                        }
+                    });
+
+            })
         })
         createDropdows()
     }
 }
-
 loadCalls()

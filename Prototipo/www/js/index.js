@@ -10,12 +10,11 @@ const request = async function (ev) {
         window.sessionStorage.setItem('id_usuario', response.id)
         window.location.href = "main.html"
     } else {
-        // swal({
-        //     type: 'error',
-        //     title: 'Oops...',
-        //     text: 'Something went wrong!',
-        //     footer: '<a href>Why do I have this issue?</a>'
-        // })
+        swal({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Senha incorreta, meu consagrado!',
+        })
     }
 }
 

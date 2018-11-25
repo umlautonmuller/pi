@@ -74,7 +74,7 @@ header button.placeholder {
 }
 
 .info p {
-    margin: 0 5vw 5vh 5vw
+    margin: 0 5vw 3vh 5vw
 }
 
 .info.open {
@@ -89,4 +89,16 @@ header button.placeholder {
     background-color: #383a47;
 }
 
-/* 2a2c35 */
+.close {
+    display: flex;
+    width: 90%;
+    height: 5vh;
+    margin: 2vw 5vw;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    padding: 0;
+    background: #41bfaa;
+    color: #eee;
+    font-size: 1em
+}
