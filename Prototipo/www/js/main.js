@@ -32,7 +32,6 @@ function initMap() {
         zoom: 14
     })
     infoWindow = new google.maps.InfoWindow
-
     document.addEventListener("deviceready", () => {
         navigator.geolocation.getCurrentPosition(function(position) {
         pos = {
@@ -51,9 +50,8 @@ function initMap() {
 } 
 
 async function createMarkers() {
-    var request = await fetch('http://200.135.34.110/joaorodrigues/fernando/PHP/chamado/buscar.php?estado=1')
-
-    var calls = await request.json()
+    let request = await fetch('http://200.135.34.110/joaorodrigues/fernando/PHP/chamado/buscar.php?estado=1')
+    let calls = await request.json() 
 
     if(calls.result) {
         calls.body.forEach(element => {
@@ -70,7 +68,6 @@ async function createMarkers() {
                 '<p>' + element.descricao + '</p>' +
                 '</div>' +
                 '</div>';
-
             google.maps.event.addListener(marker, 'click', () => {
                 let callInfo = new google.maps.InfoWindow({
                     content: contentString
@@ -107,6 +104,8 @@ document.querySelector('input#send').addEventListener('click', async ev => {
     box.style.display = "none"
     const name = document.querySelector('input#nome').value.trim()
     const descricao = document.querySelector('textarea#descricao').value.trim()
+    document.querySelector('input#nome').value = ''
+    document.querySelector('textarea#descricao').value = ''
     const request = await fetch('http://200.135.34.110/joaorodrigues/fernando/PHP/chamado/criar.php?idusuario='+window.sessionStorage.getItem('id_usuario'),{
         method:'POST',
         body: JSON.stringify({
@@ -115,5 +114,10 @@ document.querySelector('input#send').addEventListener('click', async ev => {
             descricao: descricao
         })
     })
+})
+
+document.querySelector('button#cancel').addEventListener('click', async ev => {
+    ev.preventDefault()
+    box.style.display = "none"
 })
 

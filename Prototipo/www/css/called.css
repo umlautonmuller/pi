@@ -7,7 +7,7 @@ body {
 }
 
 header {
-    position: relative;
+    position: fixed;
     top: 0;
     width: 100vw;
     height: 10vh;
@@ -87,6 +87,10 @@ header button.placeholder {
 
 .call-container:nth-child(even) .call-instances, .call-container:nth-child(even) .info {
     background-color: #383a47;
+}
+
+.call-container:first-child {
+    margin-top: 10vh
 }
 
 .close {

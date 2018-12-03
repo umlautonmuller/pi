@@ -18,20 +18,20 @@ form.login {
 	font-family: 'Roboto', sans-serif;
 	width: 80vw;
 	font-size: 3rem;
-	padding: 5vmin;
+	padding: 5vw;
 }
 
 form.login input {
     display: flex;
-	height: 6vh;
-	margin: 1vh;
+	height: 10vw;
+	margin: 2vw;
 	color: #ffffff;
 	background-color: transparent;
     box-sizing: border-box;
     justify-content: center;
 	border: none;
-	font-size: 2.5vh;
-    border-bottom: .3vh solid white;
+	font-size: 4vw;
+    border-bottom: .5vw solid white;
 }
 
 form.login input:focus {
@@ -45,17 +45,17 @@ input:required {
 }
 
 ::placeholder {
-	font-size: 2.5vh;
+	font-size: 4vw;
     color: #ffffff;
 }
 
 form.login button {
-	margin: 1vh;
+	margin: 1.6vw;
 	border: 0;
-	height: 7vh;
+	height: 11vw;
 	color: #ffffff;
 	background-color: #41bfaa;
-	border-radius: .3vh;
+	border-radius: .5vw;
 	border-style: solid;
 	font-size: 6vw;
 }
@@ -66,7 +66,7 @@ form.login a {
 	color: #ffffff;
 	font-size: 4vw;
 	text-decoration: none;
-	margin-top: 1vh;
+	margin-top: 1.66vw;
 	opacity: .8;
 }
 
@@ -81,11 +81,11 @@ div.container {
 div.container img {
 	display: flex;
 	max-width: 60vw;
-	max-height: 50vh;	
+	max-height: 80vw;	
 	width: auto;
 	height: auto;
-	margin-top: 10vh;
-	margin-bottom: 10vh;
+	margin-top: 16vw;
+	margin-bottom: 16vw;
 }
 
 /* Test: */

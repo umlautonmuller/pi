@@ -13,9 +13,10 @@ body {
     margin: 0;
     padding: 0;
     user-select: none;
-    background-color: #2a2c35;
+    background-color: #383a47;
     height: 100%;
-    width: 100%
+    width: 100%;
+    -webkit-tap-highlight-color: transparent
 }
 
 main {
@@ -35,7 +36,7 @@ header {
 
 header h1.title {
     font-family: 'Roboto', sans-serif;
-    font-size: 8vw;
+    font-size: 5vh;
     font-weight: 300;
     color: #ffffff;
 }
@@ -44,7 +45,7 @@ header button {
     height: 7vh;
     width: 7vh;
     border: none;
-    margin: 2.5vh;
+    margin: 4vw; /* 2.5vh */
     background-color: inherit;
 }
 
@@ -53,13 +54,13 @@ button:focus {
 }
 
 header .material-icons.menu {
-    font-size: 7vh;
-    margin: 2.5vh;
+    font-size: 7vh; /* 7vh */
+    margin: 4vw; /* 2.5vh */
     color: #41bfaa;
 }
 
 header button.placeholder {
-    background-size: 5vh;
+    background-size: 8vw; /* 5vh */
 }
 
 
@@ -128,8 +129,8 @@ div.click.open {
 
 #sidemenu .container div {
     display: flex;
-    font-size: 3vh;
-    margin: 2vh;
+    font-size: 4.8vw; /* 3vh */
+    margin: 3.2vw; /* 2vh */
 }
 
 #sidemenu .container div#user {
@@ -137,20 +138,20 @@ div.click.open {
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    margin: 0 0 3vh 0;
+    margin: 0 0 4.8vw 0; /* 3vh */
 }
 
 .material-icons.user {
-    height: 10vh;
-    width: 10vh;
-    background-size: 10vh;
-    font-size: 10vh;
+    height: 16.6vw; /* 10vh */
+    width: 16.6vw; /* 10vh */
+    background-size: 16.6vw; /* 10vh */
+    font-size: 16.6vw; /* 10vh */
     background-color: inherit;
 }
 
 #sidemenu .container div#user div:last-child {
     margin-left: 3vw;
-    font-size: 3vh;
+    font-size: 4.8vw; /* 3vh */
 }
 
 .material-icons.list {
@@ -164,7 +165,7 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100vw;
-    height: 10vh;
+    height: 10vh; /* 10vh */
     background-color: #383a47;
     display: flex;
     align-items: center;
@@ -186,8 +187,8 @@ i.material-icons.pin {
 /* Map */
 
 div.mapcontainer {
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center
@@ -195,8 +196,8 @@ div.mapcontainer {
 
 .mapcontainer #map {
     position: absolute !important;
-    height: 80%;
-    width: 100%;
+    height: 80vh;
+    width: 100vw;
 }
 
 
@@ -235,21 +236,21 @@ main .popup {
 
 .popup .box form input {
     display: flex;
-    height: 6vh;
+    height: 9.6vw; /* 6vh */
     color: #ffffff;
     background-color: transparent;
     box-sizing: border-box;
     justify-content: center;
-    font-size: 2.5vh;
+    font-size: 4vw; /* 2.5vh */
     /* border-bottom: .3vh solid white; */
-    padding: 1vh;
+    padding: 1.66vw; /* 1vh */
     border: none;
-    border-radius: .5vh;
+    border-radius: .8vw; /* .5vh */
     background-color: #383a47;
 }
 
 ::placeholder {
-    font-size: 2.5vh;
+    font-size: 4vw; /* 2.5vh */
     font-family: 'Roboto', sans-serif;
     color: #ffffff;
 }
@@ -269,35 +270,55 @@ main .popup {
     box-shadow: none;
 }
 
-.popup .box h1 {
+.popup .box form h1 {
     font-family: 'Roboto', sans-serif;
     font-size: 10vw;
     font-weight: 300;
     color: #ffffff;
-    margin: 5vh 0 0 0;  
+    text-align: center;
+    margin: /*8vw*/0 0 0 0; /* 5vh */
 }
 
-.popup .box form input:last-child {
+.popup .box form div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 11.2vw;
+}
+
+.popup .box form div input {
     border: 0;
-    height: 7vh;
+    width: 48%;
+    height: 100%;
     color: #ffffff;
     background-color: #41bfaa;
-    border-radius: .3vh;
+    border-radius: .48vw; /* .3vh */
+    border-style: solid;
+    font-size: 6vw;
+}
+
+.popup .box form div button {
+    border: 0;
+    width: 48%;
+    height: 100%;
+    color: #383a47;
+    background-color: #eee;
+    border-radius: .48vw; /* .3vh */
     border-style: solid;
     font-size: 6vw;
 }
 
 .popup .box form textarea {
     display: flex;
-    height: 32vh;
-    padding: 1vh;
+    height: 51.2vw; /* 32vh */
+    padding: 1.66vw; /* 1vh */
     border: none;
-    border-radius: .5vh;
+    border-radius: .8vw; /* .5vh */
     color: #ffffff;
     background-color: transparent;
     box-sizing: border-box;
     justify-content: center;
-    font-size: 2.5vh;
+    font-size: 4vw; /* 2.5vh */
     background-color: #383a47;
     resize: none;
 }

@@ -1,3 +1,7 @@
+if(!window.sessionStorage.id_usuario) {
+    location.href = 'index.html'
+}
+
 var items = document.querySelectorAll("button.call-instances")
 var main = document.querySelector('main')
 
@@ -22,7 +26,7 @@ async function createDropdows() {
 }
 
 async function loadCalls() {
-    var request = await fetch('http://200.135.34.110/joaorodrigues/fernando/PHP/chamado/buscar.php?estado=0')
+    var request = await fetch('http://200.135.34.110/joaorodrigues/fernando/PHP/chamado/buscar.php?estado=0&id_usuario='+window.sessionStorage.id_usuario)
 
     var calls = await request.json()
 
@@ -49,7 +53,7 @@ async function loadCalls() {
             button.innerText = element.nome
             close.innerText = 'Abrir novamente'
 
-            close.addEventListener('click', () => {
+            close.addEventListener('click', ev => {
                 swal({
                     title: "Tem certeza?",
                     text: "O chamado retornará ao mapa",
@@ -69,6 +73,7 @@ async function loadCalls() {
                                     icon: "success"
                                 });
                                 fetch('http://200.135.34.110/joaorodrigues/fernando/PHP/chamado/update.php?id_chamado=' + element.id_chamado + '&estado=' + element.estado)
+                                ev.target.parentNode.parentNode.remove()
                                 break;
 
                             default: break;
