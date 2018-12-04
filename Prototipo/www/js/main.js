@@ -50,7 +50,7 @@ function initMap() {
 } 
 
 async function createMarkers() {
-    let request = await fetch('http://200.135.34.110/joaorodrigues/fernando/PHP/chamado/buscar.php?estado=1', { mode: 'no-cors' })
+    let request = await fetch('http://200.135.34.110/joaorodrigues/fernando/PHP/chamado/buscar.php?estado=1')
     let calls = await request.json() 
 
     if(calls.result) {
