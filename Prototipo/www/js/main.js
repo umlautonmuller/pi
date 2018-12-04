@@ -32,7 +32,7 @@ function initMap() {
         zoom: 14
     })
     infoWindow = new google.maps.InfoWindow
-    document.addEventListener("deviceready", () => {
+    // document.addEventListener("deviceready", () => {
         navigator.geolocation.getCurrentPosition(function(position) {
         pos = {
             lat: position.coords.latitude,
@@ -46,11 +46,11 @@ function initMap() {
         }, () => {
             handleLocationError(true, infowindow, map.getCenter());
         })
-    }, false) 
+    // }, false) 
 } 
 
 async function createMarkers() {
-    let request = await fetch('http://200.135.34.110/joaorodrigues/fernando/PHP/chamado/buscar.php?estado=1')
+    let request = await fetch('http://200.135.34.110/joaorodrigues/fernando/PHP/chamado/buscar.php?estado=1', { mode: 'no-cors' })
     let calls = await request.json() 
 
     if(calls.result) {
